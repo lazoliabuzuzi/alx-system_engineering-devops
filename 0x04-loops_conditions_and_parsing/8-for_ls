@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory in list format
+# Where only the part of the name after the first dash is displayed
+
+find . -maxdepth 1 -type f -name '*-*' -not -name '.*' | grep -o '[^-]*$'
