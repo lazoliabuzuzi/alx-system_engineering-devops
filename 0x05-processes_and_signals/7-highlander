@@ -3,4 +3,15 @@
 # With a sleep 2 in between each iteration
 # "I am invincible!!!" when receiving a SIGTERM signal
 
-pkill -f 4-to_infinity_and_beyond
+sigterm_handler() {
+	echo "I am invincible!!!"
+	exit 0
+}
+
+trap 'sigterm_handler' SIGTERM
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
