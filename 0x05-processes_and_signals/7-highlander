@@ -8,7 +8,7 @@ sigterm_handler() {
 	exit 0
 }
 
-trap 'sigterm_handler' SIGTERM
+trap 'echo "I am invincible!!!"' SIGTERM
 
 while true
 do
